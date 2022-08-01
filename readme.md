@@ -5,7 +5,7 @@ Esse repositório apresenta o método Decomposição LU, versão Gaxpy, apresent
 
 ### Convenção 1
 
-Matrizes são representadas por letras maiúsculas em negrito; vetores, por minúsculas.
+Matrizes são representadas por letras maiúsculas em negrito.
 
 
 ### Convenção 2 (triangularidade inferior)
