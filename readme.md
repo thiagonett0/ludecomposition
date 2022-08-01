@@ -8,38 +8,40 @@ Esse repositório apresenta o método Decomposição LU, versão Gaxpy, apresent
 Matrizes são representadas por letras maiúsculas em negrito; vetores, por minúsculas.
 
 
-### Definição 1 (Simetria)
+### Convenção 2 (triangularidade inferior)
 
-Seja uma matriz quadrada $\mathbf{A} \in \mathbb{R}^{n \times n}$ com entradas $a_{i j}$. $\mathbf{A}$ é dita simétrica se e somente se satisfizer
-
-$$
-\begin{equation}
-    a_{i j} = a_{j i} \textrm{    } \forall i, j = 0, 1, \ldots, n-1
-\end{equation}
-$$
+Representa-se matrizes triangulares inferiores por $\mathbf{L}$.
 
 
-### Definição 2 (Positiva-Definida)
+### Convenção 3 (triangularidade superior)
 
-Seja uma matriz $\mathbf{A} \in \mathbb{R}^{m \times n}$. $\mathbf{A}$ é dita positiva-definida se e somente se satisfizer
-
-
-$$
-\begin{equation}
-    v^{T} \mathbf{A} v > 0 \textrm{    } \forall v \in \mathbb{R}^{m \times 1}
-\end{equation}
-$$
+Representa-se matrizes triangulares superiores por $\mathbf{U}$.
 
 
 ### Decomposição LU
 
 
-Seja uma matriz $\mathbf{A}$ tal que $\mathbf{A} \in \mathbb{R}^{n \times n}$. Se $\textrm{det}( \mathbf{A}(1:k, 1:k)) \neq 0 \forall k \in \{1, \hdots, n-1 \}$, então $\mathbf{A}$ possui fatoração LU. Adicionalmente, se $\mathbb{A}$ for não singular, então a fatoração LU é única e $\textrm{det}(A) = u_{11} \hdots u_{nn}$.
+Seja uma matriz $\mathbf{A}$ tal que $\mathbf{A} \in \mathbb{R}^{n \times n}$. Se $\textrm{det}( \mathbf{A}(1:k, 1:k)) \neq 0 \,\,\, \forall k \in \{1, ... , n-1 \}$, então $\mathbf{A}$ possui fatoração LU. Adicionalmente, se $\mathbf{A}$ for não singular, então a fatoração LU é única e $\textrm{det}(A) = u_{11} ... u_{nn}$.
 
 
 $$
 \begin{equation}
-    x_i^{(k+1)} = \dfrac{b_i + \displaystyle\sum_{j=1}^{i-1} \left( a_{i j} x_j^{(k+1)} \right) - \displaystyle\sum_{j=i+1}^{n} \left( a_{i j} x_j^{(k)} \right)}{a_{i i}}
+    \begin{pmatrix}
+        a_{11} & ... & a_{1n} \\
+        \vdots & \ddots & \vdots \\
+        a_{n1} & ... & a_{nn}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        l_{11} & ... & 0 \\
+        \vdots & \ddots & \vdots \\
+        l_{n1} & ... & l_{nn}
+    \end{pmatrix}
+    \begin{pmatrix}
+        u_{11} & ... & u_{1n} \\
+        \vdots & \ddots & \vdots \\
+        0 & ... & u_{nn}
+    \end{pmatrix}
 \end{equation}
 $$
 
