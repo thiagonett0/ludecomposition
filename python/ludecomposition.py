@@ -10,10 +10,10 @@ def zeros(n):
     Descrição: função que cria uma matriz quadrada com entradas nulas;
 
     Entrada(s):
-            i) n (int): tamanho da matriz;
+                i) n (int): tamanho da matriz;
         
     Saída(s):
-            i) Z (list): matriz nula.
+                i) Z (list): matriz nula.
     """
 
     Z = [[0 for _ in range(n)] for _ in range(n)]
@@ -26,10 +26,10 @@ def identidade(n):
     Descrição: função que cria uma matriz identidade quadrada;
 
     Entrada(s):
-            i) n (int): tamanho da matriz;
+                i) n (int): tamanho da matriz;
         
     Saída(s):
-            i) I (list): matriz identidade.
+                i) I (list): matriz identidade.
     """
 
     I = [[0 for _ in range(n)] for _ in range(n)]
@@ -39,6 +39,20 @@ def identidade(n):
 
 
 def produtoescalar(a, u):
+
+    """
+    Descrição: opera produto escalar entre um escalar (número real) e um vetor real. Para tal,
+                basta acessar cada entrada do vetor, multiplicar pelo escalar e adicionar o 
+                resultado em outra lista;
+
+    Entrada(s):
+                i) a (float): escalar real;
+                ii) u (list): vetor real;
+    
+    Saída(s):
+                i) p (list): vetor resultado.
+    """
+
     p = list()
     for i in u:
         p.append(a*i)
