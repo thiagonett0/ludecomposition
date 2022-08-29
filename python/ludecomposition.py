@@ -10,40 +10,6 @@ sys.path.append( 'path' )
 import linalg as la
 
 
-def zeros(n):
-
-    """
-    Descrição: função que cria uma matriz quadrada com entradas nulas;
-
-    Entrada(s):
-                i) n (int): tamanho da matriz;
-        
-    Saída(s):
-                i) Z (list): matriz nula.
-    """
-
-    Z = [[0 for _ in range(n)] for _ in range(n)]
-    return Z
-
-
-def identidade(n):
-
-    """
-    Descrição: função que cria uma matriz identidade quadrada;
-
-    Entrada(s):
-                i) n (int): tamanho da matriz;
-        
-    Saída(s):
-                i) I (list): matriz identidade.
-    """
-
-    I = [[0 for _ in range(n)] for _ in range(n)]
-    for i in range(n):
-        I[i][i] = 1
-    return I
-
-
 def triForward(L, b):
 
     """
@@ -96,7 +62,7 @@ def luDecomp(A):
                 ii) U (list): matriz triangular superior.
     """
 
-    L, U = identidade(len(A)), zeros(len(A))
+    L, U = la.identityMatrix(len(A)), la.zeroMatrix(len(A))
     v = [0 for _ in range(len(A))]
     for i in range(len(A)):
         if i == 0:
